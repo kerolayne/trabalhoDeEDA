@@ -22,23 +22,23 @@ int insereNaPosicaoMatriz(MatrizEsparsa *matriz, int linha, int coluna, int valo
   Lista l;
   int i, j, k, w;
   EntradaMatriz e
-  for ( i = 0; matriz.nlinha < linha ; i++) {
-      for (w = 0; matriz.ncoluna < coluna; w++) {
-          insereNaPosicao(&matriz.m, &l, i);
+  for ( i = 0; matriz->nlinha < linha ; i++) {
+      for (w = 0; matriz->ncoluna < coluna; w++) {
+          insereNaPosicao(&matriz->m, &l, i);
       }
   }
   return 0;
 }
 
 //le na posiçao
-int lePosicaoMatriz(MatrizEsparsa matriz, int indice){
+int lePosicaoMatriz(MatrizEsparsa *matriz, int indice){
 
   Lista l;
   int i, j, k, w;
   EntradaMatriz e
-  for ( i = 0; matriz.nlinha < linha ; i++) {
-      for (w = 0; matriz.ncoluna < coluna; w++) {
-          leNaPosiscao(&matriz.m, &l, i);
+  for ( i = 0; matriz->nlinha < linha ; i++) {
+      for (w = 0; matriz->ncoluna < coluna; w++) {
+          leNaPosiscao(&matriz->m, &l, i);
       }
   }
     return 0;
@@ -61,12 +61,13 @@ int removeNaPosicaoMatriz(MatrizEsparsa matriz, int linha, int coluna){
 
 int somaMatriz(MatrizEsparsa *matriz1, MatrizEsparsa *matriz2 ){
     MatrizEsparsa matrizResul;
+    Lista l;
     int i, j;
-    if(matriz1.nlinha == matriz2.nlinha){
-        if(matriz1.ncoluna == matriz2.ncoluna){
-            for (i = 0; i < matriz1.nlinha; i++) {
-                for (j = 0; j < matriz1.ncoluna; j++) {
-                    insereNaPosicao(matrizResul,leNaPosiscao(&matriz1.m, &l, i)+leNaPosiscao(&matriz2.m, &l, i),j);
+    if(matriz1->nlinha == matriz2->nlinha){
+        if(matriz1->ncoluna == matriz2->ncoluna){
+            for (i = 0; i < matriz1->nlinha; i++) {
+                for (j = 0; j < matriz1->ncoluna; j++) {
+                    insereNaPosicao(matrizResul.m,leNaPosiscao(&matriz1->m, &l, i)+leNaPosiscao(&matriz2->m, &l, i),j);
                 }
             }
         }
@@ -77,13 +78,14 @@ int somaMatriz(MatrizEsparsa *matriz1, MatrizEsparsa *matriz2 ){
 }
 int multiplicaMatriz(MatrizEsparsa *matriz1, MatrizEsparsa *matriz2 ){
     MatrizEsparsa matrizResul;
+    Lista l;
     int i, j, aux;
-    if(matriz1.nlinha == matriz2.ncoluna){
-      for (i = 0; i < matriz1.nlinha; i++) {
-          for (j = 0; j < matriz1.ncoluna; j++) {
-            aux += leNaPosiscao(&matriz1.m, &l, i) * leNaPosiscao(&matriz2.m, &l, j);
+    if(matriz1->nlinha == matriz2->ncoluna){
+      for (i = 0; i < matriz1->nlinha; i++) {
+          for (j = 0; j < matriz1->ncoluna; j++) {
+            aux += leNaPosiscao(&matriz1->m, &l, i) * leNaPosiscao(&matriz2->m, &l, j);
           }
-          insereNaPosicao(matrizResul, aux, i);
+          insereNaPosicao(matrizResul.m, aux, i);
       }
     }else{
         printf("Não é possivel multiplicar as Matrizes\n");
