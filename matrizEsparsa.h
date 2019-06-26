@@ -22,6 +22,10 @@ void inicializa_matriz(MatrizEsparsa *matriz, int linha, int coluna);
 
 void mostra_matriz(MatrizEsparsa mat);
 
-//void lePosicaoMatriz(MatrizEsparsa &matriz, int linha, int coluna);
+int lePosicaoMatriz(MatrizEsparsa *matriz, int linha, int coluna);
 
 int insereNaPosicaoMatriz(MatrizEsparsa matriz, int linha, int coluna, int valor);
+
+int somaMatriz(MatrizEsparsa *matriz1, MatrizEsparsa *matriz2 );
+
+int multiplicaMatriz(MatrizEsparsa *matriz1, MatrizEsparsa *matriz2 );
