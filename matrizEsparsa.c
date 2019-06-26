@@ -38,7 +38,7 @@ int lePosicaoMatriz(MatrizEsparsa matriz, int indice){
   EntradaMatriz e
   for ( i = 0; matriz.nlinha < linha ; i++) {
       for (w = 0; matriz.ncoluna < coluna; w++) {
-          removeDaPosicao(&matriz.m, &l, i);
+          leNaPosiscao(&matriz.m, &l, i);
       }
   }
     return 0;
@@ -53,13 +53,13 @@ int removeNaPosicaoMatriz(MatrizEsparsa matriz, int linha, int coluna){
   EntradaMatriz e
   for ( i = 0; matriz.nlinha < linha ; i++) {
       for (w = 0; matriz.ncoluna < coluna; w++) {
-          leNaPosiscao(&matriz.m, &l, i);
+          removeDaPosicao(&matriz.m, &l, i);
       }
   }
     return 0;
 }
 
-int somoMatriz(MatrizEsparsa *matriz1, MatrizEsparsa *matriz2 ){
+int somaMatriz(MatrizEsparsa *matriz1, MatrizEsparsa *matriz2 ){
     MatrizEsparsa matrizResul;
     int i, j;
     if(matriz1.nlinha == matriz2.nlinha){
@@ -73,7 +73,7 @@ int somoMatriz(MatrizEsparsa *matriz1, MatrizEsparsa *matriz2 ){
     }else{
         printf("Fail!!!! Matrizes de tamamhos diferentes\n");
       }
-    return 0;
+    return matrizResul;
 }
 int multiplicaMatriz(MatrizEsparsa *matriz1, MatrizEsparsa *matriz2 ){
     MatrizEsparsa matrizResul;
@@ -88,7 +88,7 @@ int multiplicaMatriz(MatrizEsparsa *matriz1, MatrizEsparsa *matriz2 ){
     }else{
         printf("Não é possivel multiplicar as Matrizes\n");
     }
-    return 0;
+    return matrizResul;
 }
 
 void mostra_matriz(MatrizEsparsa mat){
