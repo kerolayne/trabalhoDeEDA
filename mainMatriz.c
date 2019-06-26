@@ -29,7 +29,7 @@ int main(int argc, char const *argv[]) {
     scanf("%d", &c1);
     //cria matriz 1
 
-    printf("Digite os valores para linha, coluna e informação:\n", );
+    printf("Digite os valores para linha, coluna e informação:\n");
     scanf("%d %d %d\n",l1, c2, valor );
     insereNaPosicaoMatriz(&p1, l1, c2, valor);
     inicializa_matriz(&p1, l1, c1);
@@ -59,7 +59,7 @@ int main(int argc, char const *argv[]) {
         switch (o) {
           case 1:
               //insere na matriz
-              printf("Digite os valores para linha, coluna e informação:\n", );
+              printf("Digite os valores para linha, coluna e informação:\n");
               scanf("%d %d %d\n",l, c, valor );
               insereNaPosicaoMatriz(&p1, l, c, valor);
 
@@ -68,7 +68,7 @@ int main(int argc, char const *argv[]) {
           case 2:
 
               //insere na matriz
-              printf("Digite os valores para linha, coluna e informação:\n", );
+              printf("Digite os valores para linha, coluna e informação:\n");
               scanf("%d %d %d", &l, &c, &valor );
               insereNaPosicaoMatriz(&p2, l, c, valor);
 
@@ -77,14 +77,14 @@ int main(int argc, char const *argv[]) {
 
           case 3:
               //ler na matriz 1\n");;
-              printf("Digite os valores para linha, coluna e informação:\n", );
+              printf("Digite o indice:\n");
               scanf("%d %d %d", &l, &c, &valor );
               lePosicaoMatriz(&p2, indice);
           break;
 
           case 4:
               //ler na matriz1
-              printf("Digite os valores para linha, coluna e informação:\n", );
+              printf("Digite o indice:\n");
               scanf("%d %d %d", &l, &c, &valor );
               lePosicaoMatriz(&p2, indice);
 
@@ -92,14 +92,14 @@ int main(int argc, char const *argv[]) {
 
           case 5:
               //5. remover da matriz 1\n")
-              printf("Digite os valores para linha, coluna e informação:\n", );
+              printf("Digite os valores para linha e coluna:\n");
               scanf("%d %d %d", &l, &c, &valor );
               removeNaPosicaoMatriz(&p2, l, c);
           break;
 
           case 6:
           // 6. remover da matriz 2\n"
-              printf("Digite os valores para linha, coluna e informação:\n", );
+              printf("Digite os valores para linha e coluna :\n");
               scanf("%d %d %d", &l, &c, &valor );
               removeNaPosicaoMatriz(&p2, l, c);
 
